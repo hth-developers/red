@@ -1,9 +1,10 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Home from './../screens/Home';
+
 import Track from './../screens/Track';
 import Dashboard from './../screens/Dashboard';
+import HomeStack from './homeStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,8 +19,8 @@ const DashboardTabs = () => {
         activeTintColor: '#000',
       }}>
       <Tab.Screen
-        name="Home"
-        component={Home}
+        name="HomeStack"
+        component={HomeStack}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({color, size, focused}) => (

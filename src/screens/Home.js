@@ -8,7 +8,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-import NavigationServices from '../utils/navigation';
+// import navigation from '../utils/navigation';
 
 //TODO:
 // List with Serchbar
@@ -25,7 +25,7 @@ const Home = (props) => {
             activeOpacity={0.8}
             style={styles.button}
             onPress={() =>
-              NavigationServices.navigate('HomeStack', {
+              navigation.navigate('HomeStack', {
                 screen: 'Booking',
               })
             }>
@@ -36,7 +36,7 @@ const Home = (props) => {
             activeOpacity={0.8}
             style={styles.button}
             onPress={() =>
-              NavigationServices.navigate('HomeStack', {
+              navigation.navigate('HomeStack', {
                 screen: 'Inward',
               })
             }>
@@ -47,7 +47,7 @@ const Home = (props) => {
             activeOpacity={0.8}
             style={styles.button}
             onPress={() =>
-              NavigationServices.navigate('HomeStack', {
+              navigation.navigate('HomeStack', {
                 screen: 'Dispatch',
               })
             }>
