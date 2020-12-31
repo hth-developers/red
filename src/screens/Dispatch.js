@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 
 const Dispatch = () => {
   return (
-    <View>
+    <View style={styles.contsiner}>
       <Text>Dispatch</Text>
     </View>
   );
@@ -11,4 +11,11 @@ const Dispatch = () => {
 
 export default Dispatch;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  contsiner: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+  },
+});

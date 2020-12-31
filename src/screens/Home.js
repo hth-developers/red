@@ -5,8 +5,9 @@ import {
   TouchableOpacity,
   Image,
   View,
-  ScrollView,
+  StatusBar,
 } from 'react-native';
+import Icon from '../components/Icon';
 
 // import navigation from '../utils/navigation';
 
@@ -18,6 +19,18 @@ const Home = (props) => {
 
   return (
     <View style={styles.contsiner}>
+      <StatusBar barStyle={'dark-content'} backgroundColor="#FFF" />
+      <TouchableOpacity
+        style={{
+          alignSelf: 'flex-end',
+          margin: 10,
+          marginRight: 20,
+          backgroundColor: '#000',
+          padding: 10,
+          borderRadius: 5,
+        }}>
+        <Text style={{fontSize: 15, color: '#fff'}}>Logout</Text>
+      </TouchableOpacity>
       <Image style={styles.logo} source={require('../assets/Logo/logo.png')} />
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <View style={styles.buttonContainer}>
@@ -29,8 +42,8 @@ const Home = (props) => {
                 screen: 'Booking',
               })
             }>
-            <Text style={{color: '#fff'}}>150</Text>
-            <Text style={{color: '#fff'}}>Booking</Text>
+            <Icon name={'booking'} size={70} color={'#fff'} />
+            <Text style={styles.buttonText}>150 Booking</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
@@ -40,8 +53,8 @@ const Home = (props) => {
                 screen: 'Inward',
               })
             }>
-            <Text style={{color: '#fff'}}>170</Text>
-            <Text style={{color: '#fff'}}>Inward</Text>
+            <Icon name={'inward'} size={70} color={'#fff'} />
+            <Text style={styles.buttonText}>170 Inward</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
@@ -51,15 +64,15 @@ const Home = (props) => {
                 screen: 'Dispatch',
               })
             }>
-            <Text style={{color: '#fff'}}>480</Text>
-            <Text style={{color: '#fff'}}>Dispatch</Text>
+            <Icon name={'dispatch'} size={70} color={'#fff'} />
+            <Text style={styles.buttonText}>480 Dispatch</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.button}
             onPress={() => navigation.navigate('Delivery')}>
-            <Text style={{color: '#fff'}}>100</Text>
-            <Text style={{color: '#fff'}}>Delivery</Text>
+            <Icon name={'delivery'} size={70} color={'#fff'} />
+            <Text style={styles.buttonText}>100 Delivery</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -81,7 +94,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     alignSelf: 'center',
     margin: 10,
-    marginTop: 50,
+    marginTop: 20,
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -96,5 +109,11 @@ const styles = StyleSheet.create({
     width: '44%',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
+    marginTop: 20,
   },
 });

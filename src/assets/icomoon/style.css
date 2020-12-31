@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?1nxogd');
+  src:  url('fonts/icomoon.eot?1nxogd#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?1nxogd') format('truetype'),
+    url('fonts/icomoon.woff?1nxogd') format('woff'),
+    url('fonts/icomoon.svg?1nxogd#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-delivery:before {
+  content: "\e900";
+}
+.icon-dispatch:before {
+  content: "\e901";
+}
+.icon-inward:before {
+  content: "\e902";
+}
+.icon-booking:before {
+  content: "\e903";
+}

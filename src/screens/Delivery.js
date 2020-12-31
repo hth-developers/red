@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 
 const Delivery = () => {
   return (
-    <View>
+    <View style={styles.contsiner}>
       <Text> Delivery</Text>
     </View>
   );
@@ -11,4 +11,11 @@ const Delivery = () => {
 
 export default Delivery;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  contsiner: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#fff',
+    alignItems: 'center',
+  },
+});

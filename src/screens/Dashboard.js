@@ -6,50 +6,69 @@ import {
   Text,
   TouchableOpacity,
   View,
+  SafeAreaView,
+  StatusBar,
 } from 'react-native';
 import {Bezier_Line_Chart, Pie_Chart} from '../components/Charts';
+
+import Icon from '../components/Icon';
 
 const {width} = Dimensions.get('window');
 const Dashboard = () => {
   return (
-    <ScrollView showsVerticalScrollIndicator={false} style={styles.contsiner}>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.button}
-          onPress={() => console.log('clicked')}>
-          <Text style={{color: '#fff'}}>150</Text>
-          <Text style={{color: '#fff'}}>Booking</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.button}
-          onPress={() => console.log('clicked')}>
-          <Text style={{color: '#fff'}}>170</Text>
-          <Text style={{color: '#fff'}}>Inward</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.button}
-          onPress={() => console.log('clicked')}>
-          <Text style={{color: '#fff'}}>480</Text>
-          <Text style={{color: '#fff'}}>Dispatch</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.button}
-          onPress={() => console.log('clicked')}>
-          <Text style={{color: '#fff'}}>100</Text>
-          <Text style={{color: '#fff'}}>Delivery</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.chartContainer}>
-        <Bezier_Line_Chart width={width} />
-      </View>
-      <View style={styles.chartContainer}>
-        <Pie_Chart width={width} />
-      </View>
-    </ScrollView>
+    <SafeAreaView style={styles.contsiner}>
+      <StatusBar barStyle={'dark-content'} backgroundColor="#FFF" />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={styles.button}
+            onPress={() =>
+              navigation.navigate('HomeStack', {
+                screen: 'Booking',
+              })
+            }>
+            <Icon name={'booking'} size={70} color={'#fff'} />
+            <Text style={styles.buttonText}>150 Booking</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={styles.button}
+            onPress={() =>
+              navigation.navigate('HomeStack', {
+                screen: 'Inward',
+              })
+            }>
+            <Icon name={'inward'} size={70} color={'#fff'} />
+            <Text style={styles.buttonText}>170 Inward</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={styles.button}
+            onPress={() =>
+              navigation.navigate('HomeStack', {
+                screen: 'Dispatch',
+              })
+            }>
+            <Icon name={'dispatch'} size={70} color={'#fff'} />
+            <Text style={styles.buttonText}>480 Dispatch</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={styles.button}
+            onPress={() => navigation.navigate('Delivery')}>
+            <Icon name={'delivery'} size={70} color={'#fff'} />
+            <Text style={styles.buttonText}>100 Delivery</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.chartContainer}>
+          <Bezier_Line_Chart width={width} />
+        </View>
+        <View style={styles.chartContainer}>
+          <Pie_Chart width={width} />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -85,5 +104,11 @@ const styles = StyleSheet.create({
     margin: 10,
     borderWidth: 1,
     borderRadius: 8,
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
+    marginTop: 20,
   },
 });

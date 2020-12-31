@@ -14,11 +14,7 @@ const Stack = createStackNavigator();
 
 const HomeStack = () => {
   return (
-    <Stack.Navigator
-      initialRouteName="Home"
-      screenOptions={{
-        headerRight: (props) => <HeadRight {...props} />,
-      }}>
+    <Stack.Navigator initialRouteName="Home">
       <Stack.Screen
         options={{headerShown: false}}
         name="Home"
